@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import logo from './logo1.jpg';
 import './App.css';
 import { useState } from 'react';
 import {tabs} from './data/tabs'
@@ -39,6 +39,21 @@ function App() {
 
   return (
     <div className="App">
+
+
+{/* ToDO-List implementation */}
+      
+      <h1 className='heading'><img src={logo} alt='Logo Not Found'/>Todo List</h1>
+      <form onSubmit={saveToDolist}>
+        <input type="text" name='toname'/><button>Save</button>
+      </form>
+      <div className='outerDiv'>
+        <ul>
+          {list}
+        </ul>
+      </div>
+
+      
 {/* tabs implementation */}
       <div className='tabsOuter'>
         <h1>Tabs Handling in React </h1>
@@ -54,17 +69,6 @@ function App() {
         {activeContent!==undefined? 
         <p>{activeContent.discription}</p>:<></>
         }
-      </div>
-
-
-      <h1>Todo List</h1>
-      <form onSubmit={saveToDolist}>
-        <input type="text" name='toname'/><button>Save</button>
-      </form>
-      <div className='outerDiv'>
-        <ul>
-          {list}
-        </ul>
       </div>
     </div>
   );
